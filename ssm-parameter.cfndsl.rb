@@ -9,7 +9,7 @@ CloudFormation do
   ssm_parameters.each do |name, ssm_param|
 
     if ssm_param.has_key?('random') && ssm_param['random']
-      value = (0...12).map { (65 + rand(26)).chr }.join
+      value = (0...16).map { (65 + rand(52)).chr }.join
     elsif
       value = ssm_param['value']
     end
